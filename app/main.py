@@ -1,3 +1,4 @@
+import os
 from flask import *
 from flask_cors import CORS
 
@@ -6,5 +7,8 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    try:
+        return render_template('index.html')
+    except Exception as e:
+        return str(e)+os.getcwd()
 
