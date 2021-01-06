@@ -10,5 +10,5 @@ def home():
     try:
         return render_template('index.html')
     except Exception as e:
-        return str(e)+os.getcwd()
+        return str(e)+" "+os.getcwd()
 
